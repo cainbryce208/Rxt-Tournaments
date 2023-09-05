@@ -44,14 +44,13 @@ jobs:
       - run: |
           git config --global user.email $BRYCE_EMAIL
           git config --global user.name $BRYCE_USERNAME
-          git branch rxt_dev
           git checkout main
-          echo $pwd;ls
-          git add '${{ github.workspace }}/dist'
+          git branch rxt_dev
+          git add '$pwd/dist'
           git commit -m "Deployment"
           git remote add rxt_main https://github.com/cainbryce208/Rxt-Tournaments.git
           git push --force rxt_main deployment
-          git pull origin deployment
+          git pull rxt_dev deployment
           echo "Done commiting / pushing"
         env:
           BRYCE_EMAIL: BRYCE_EMAIL
