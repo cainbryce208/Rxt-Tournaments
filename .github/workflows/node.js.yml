@@ -42,7 +42,6 @@ jobs:
       - run: npm run build --if-present
       # This step runs the `test` script that is specified under the `scripts` key in your `package.json` file.
       - run: |
-          git remote add origin https://github.com/cainbryce208/Rxt-Tournaments.git
           git config --global user.email $BRYCE_EMAIL
           git config --global user.name $BRYCE_USERNAME
           cd ./dist
