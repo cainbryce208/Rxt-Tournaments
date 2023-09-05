@@ -49,3 +49,7 @@ jobs:
           git push --force origin master:deployment
           git pull origin deployment
           echo "Done commiting / pushing"
+        env:
+          BRYCE_EMAIL: BRYCE_EMAIL
+          BRYCE_USERNAME: BRYCE_USERNAME
+          BRYCE_PAC: BRYCE_PAC
