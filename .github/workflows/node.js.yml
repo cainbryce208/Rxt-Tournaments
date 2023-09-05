@@ -42,6 +42,8 @@ jobs:
       - run: npm run build --if-present
       # This step runs the `test` script that is specified under the `scripts` key in your `package.json` file.
       - run: |
+          git remote remove origin
+          git remote add origin https://$BRYCE_PAC@github.com/$BRYCE_USERNAME/$BRYCE_REPOSNAME
           git config --global user.email $BRYCE_EMAIL
           git config --global user.name $BRYCE_USERNAME
           cd ./dist
