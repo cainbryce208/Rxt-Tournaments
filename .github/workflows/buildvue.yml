@@ -2,18 +2,18 @@ name: Build Deployment
   on: [push]
   jobs:
     build_web:
-    runs-on: ubuntu-latest
-    name: Build With Vue
-    steps:
-      - uses: actions/checkout@v3
-      - id: Build-With-Vue
-    runs:
+      runs-on: ubuntu-latest
+      name: Build With Vue
       steps:
-      - name: Build
-        run: |
-              cd Rxt-Tournaments
-              npm run build
-      push_web:
+        - uses: actions/checkout@v3
+        - id: Build-With-Vue
+      runs:
+        steps:
+        - name: Build
+          run: |
+                cd Rxt-Tournaments
+                npm run build
+    push_web:
       runs-on: ubuntu-latest
       name: Push To Web
       runs:
