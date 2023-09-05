@@ -28,9 +28,10 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
         cache-dependency-path: '${{ github.workspace }}/rextontournaments'
-    - run: echo $PWD
-    - run: cd '${{ github.workspace }}/rextontournaments'
-    - run: echo $PWD
-    - run: npm install
-    - run: npm run build --if-present
-    - run: npm test
+    - run: |
+          echo $PWD
+          cd '${{ github.workspace }}/rextontournaments'
+          echo $PWD
+          npm install
+          npm run build --if-present
+          npm test
