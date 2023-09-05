@@ -29,7 +29,6 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-        cache-dependency-path: /home/runner/work/Rxt-Tournaments/Rxt-Tournaments/rextontournaments/package-lock.json
     - run: echo "$PWD"
     - run: cd /home/runner/work/Rxt-Tournaments/Rxt-Tournaments/rextontournaments
     - run: npm ci
