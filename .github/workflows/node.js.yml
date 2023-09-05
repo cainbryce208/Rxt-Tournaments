@@ -48,7 +48,7 @@ jobs:
           git config --global user.name $BRYCE_USERNAME
           git checkout -b master
           cd ./dist
-          git add -all
+          git add --all
           git commit -m "Deployment"
           git push --force origin:master
         env:
