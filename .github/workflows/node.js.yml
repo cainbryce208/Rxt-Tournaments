@@ -29,7 +29,4 @@ jobs:
         cache: 'npm'
         cache-dependency-path: '${{ github.workspace }}/rextontournaments'
     - name: Install Dependencies
-      run: |
-          cd '${{ github.workspace }}/rextontournaments'
-          echo  pwd; ls -l
-          npm install
+      run: cd '${{github.}}'
