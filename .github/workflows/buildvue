@@ -8,7 +8,7 @@
     # Your reponame
     reponame:Rxt-Tournaments 
     # Your Github token
-    token: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 
+    token:${{ secrets.brycePac }}
     # Your git commit email
     gitemail:cainbryce208@gmail.com
     # Your git commit name
