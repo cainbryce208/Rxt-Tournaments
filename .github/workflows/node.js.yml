@@ -45,7 +45,8 @@ jobs:
           git config --global user.email $BRYCE_EMAIL
           git config --global user.name $BRYCE_USERNAME
           git branch rxt_dev
-          git checkout rxt_dev
+          git checkout main
+          echo $pwd;ls
           git add '${{ github.workspace }}/dist'
           git commit -m "Deployment"
           git remote add rxt_main https://github.com/cainbryce208/Rxt-Tournaments.git
