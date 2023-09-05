@@ -27,8 +27,8 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-        cache-dependency-path: 'rextontournaments'
+        cache-dependency-path: 'rextontournaments/*'
     - run: cd rextontournaments
-    - run: npm ci
+    - run: npm install
     - run: npm run build --if-present
     - run: npm test
