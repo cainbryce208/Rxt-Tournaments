@@ -48,6 +48,7 @@ jobs:
           git init .
           git add --all
           git commit -m "Deployment"
+          git push --set-upstream origin:deployment master
           git push --force origin:deployment
           echo "Done commiting / pushing"
         env:
