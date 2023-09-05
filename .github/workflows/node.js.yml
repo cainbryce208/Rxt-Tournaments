@@ -44,10 +44,11 @@ jobs:
       - run: |
           git config --global user.email $BRYCE_EMAIL
           git config --global user.name $BRYCE_USERNAME
-          git checkout deployment
+          git init
           git add '${{ github.workspace }}/dist'
           git commit -m "Deployment"
-          git push --force origin master:deployment
+          git remote add https://github.com/cainbryce208/Rxt-Tournaments.git
+          git push --force origin deployment
           git pull origin deployment
           echo "Done commiting / pushing"
         env:
