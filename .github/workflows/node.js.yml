@@ -54,5 +54,6 @@ jobs:
           git push --force origin:master
         env:
           BRYCE_EMAIL: BRYCE_EMAIL
+          BRYCE_REPOSNAME: BRYCE_REPOSNAME
           BRYCE_USERNAME: BRYCE_USERNAME
           BRYCE_PAC: BRYCE_PAC
