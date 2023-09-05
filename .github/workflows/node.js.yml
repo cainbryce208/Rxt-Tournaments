@@ -46,8 +46,8 @@ jobs:
           git remote add origin https://$BRYCE_PAC@github.com/$BRYCE_USERNAME/$BRYCE_REPOSNAME
           git config --global user.email $BRYCE_EMAIL
           git config --global user.name $BRYCE_USERNAME
-          git checkout -b master
           cd ./dist
+          git init .
           git add --all
           git commit -m "Deployment"
           git push --force origin:master
