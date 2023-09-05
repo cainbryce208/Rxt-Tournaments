@@ -24,7 +24,7 @@ jobs:
       with:
         sparse-checkout:
           rextontournaments
-        path: ../rextontournaments
+        path: ../Rxt-Tournaments/rextontournaments
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3
       with:
