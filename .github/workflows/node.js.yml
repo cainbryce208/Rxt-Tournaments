@@ -31,8 +31,7 @@ jobs:
     - run: |
           echo $PWD
           cd '${{ github.workspace }}/rextontournaments'
-          echo $ls
-          echo $PWD
+          echo  pwd; ls -l
           npm install
           npm run build --if-present
           npm test
