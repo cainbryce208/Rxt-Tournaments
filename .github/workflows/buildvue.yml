@@ -11,5 +11,5 @@ jobs:
       with:
         username: 'cainbryce208'
         reponame: 'Rxt-Tournaments'
-        token: ${{ secrets.BRYCEPAC }} # Leave this line unchanged
+        token: ${{ secrets.GITHUB_TOKEN }} # Leave this line unchanged
         branch: 'deployment' # defaults to 'gh-pages' but can be changed
