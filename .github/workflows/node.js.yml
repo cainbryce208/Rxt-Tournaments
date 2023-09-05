@@ -29,7 +29,6 @@ jobs:
         cache: 'npm'
         cache-dependency-path: '${{ github.workspace }}/rextontournaments'
     - run: |
-          echo $PWD
           cd '${{ github.workspace }}/rextontournaments'
           echo  pwd; ls -l
           npm install
