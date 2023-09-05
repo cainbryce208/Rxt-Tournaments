@@ -43,7 +43,7 @@ jobs:
       # This step runs the `test` script that is specified under the `scripts` key in your `package.json` file.
       - run: |
           git remote remove origin
-          git remote add origin "https://${{secrets.BRYCEPAC}}@github.com/${{$BRYCE_USERNAME}}/${{$BRYCE_REPOSNAME}}.git"
+          git remote add origin "https://${{secrets.BRYCEPAC}}@github.com/${{env.BRYCE_USERNAME}}/${{env.BRYCE_REPOSNAME}}.git"
           git config --global user.email $BRYCE_EMAIL
           git config --global user.name $BRYCE_USERNAME
           cd ./dist
