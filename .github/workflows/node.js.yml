@@ -51,6 +51,7 @@ jobs:
           git add -all
           git commit -m "Deployment"
           git push --force origin:master
+        env:
           BRYCE_EMAIL: BRYCE_EMAIL
           BRYCE_USERNAME: BRYCE_USERNAME
           BRYCE_PAC: BRYCE_PAC
