@@ -31,7 +31,7 @@ jobs:
         cache-dependency-path: 'rextontournaments'
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - run: cd rextontournaments
+    - run: cd cd ../Rxtn-Tournaments/rextontournaments
     - run: npm ci
     - run: npm run build --if-present
     - run: npm test
