@@ -36,7 +36,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - run: npm install -g @vue/cli
-      - run: npm install --save-dev eslint@5 babel-eslint eslint-plugin-vue
+      - run: npm install -D eslint eslint-plugin-vue babel-eslint
       
       # This step runs `npm ci` to install any dependencies listed in your `package.json` file.
       - run: npm ci
