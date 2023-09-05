@@ -22,12 +22,12 @@ jobs:
     steps:
     - uses: actions/checkout@v4
       with:
-        cache-dependency-path: 'rextontournaments'
         sparse-checkout:
           rextontournaments
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3
       with:
+        cache-dependency-path: 'rextontournaments'
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - run: cd rextontournaments
