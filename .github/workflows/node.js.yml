@@ -42,14 +42,13 @@ jobs:
       - run: npm run build --if-present
       # This step runs the `test` script that is specified under the `scripts` key in your `package.json` file.
       - run: |
+          git remote add rxt_main https://github.com/cainbryce208/Rxt-Tournaments.git
           git config --global user.email $BRYCE_EMAIL
           git config --global user.name $BRYCE_USERNAME
-          git checkout main
-          git branch rxt_dev
-          git add '$pwd/dist'
+          git checkout -b master
+          git add './dist'
           git commit -m "Deployment"
-          git remote add rxt_main https://github.com/cainbryce208/Rxt-Tournaments.git
-          git push --force rxt_main deployment
+          git push --force rxt_main:deployment
           git pull rxt_dev deployment
           echo "Done commiting / pushing"
         env:
