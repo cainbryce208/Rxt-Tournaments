@@ -42,9 +42,8 @@ jobs:
       - run: npm run build --if-present
       # This step runs the `test` script that is specified under the `scripts` key in your `package.json` file.
       - run: |
-          git init
           git add '${{ github.workspace }}/dist'
           git commit -m "Deployment"
-          git push origin master:deployment
+          git push --force origin master:deployment
           git pull origin deployment
           echo "Done commiting / pushing"
