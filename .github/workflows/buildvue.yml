@@ -1,15 +1,30 @@
-name: Build Vue
-on: [push]
-jobs:
-  build_vue:
+name: Build Deployment
+  on: [push]
+  jobs:
+    build_web:
     runs-on: ubuntu-latest
-    name: Build Vue
+    name: Build With Vue
     steps:
-    - uses: actions/checkout@v2
-    - id: Build-Vue
-      uses: LizAinslie/VueBuildToBranchAction@1.0.2
-      with:
-        username: 'cainbryce208'
-        reponame: 'Rxt-Tournaments'
-        token: ${{ secrets.GITHUB_TOKEN }} # Leave this line unchanged
-        gitbranch: 'deployment' # defaults to 'gh-pages' but can be changed
+      - uses: actions/checkout@v3
+      - id: Build-With-Vue
+    runs:
+      steps:
+      - name: Build
+        run: |
+              cd Rxt-Tournaments
+              npm run build
+      push_web:
+      runs-on: ubuntu-latest
+      name: Push To Web
+      runs:
+        steps:
+        -name: Push to Branch
+        run: |
+              cd dist
+              git config --global user.email "${{ BRYCE_EMAIL }}"
+              git config --global user.name "${{ BRYCE_USERNAME }}"
+              git init
+              git add -A
+              git commit -m "Deployment"
+              git push -f https://${{ BRYCE_EMAIL }}:${{ BRYCE_PAC }}@github.com/${{ BRYCE_USERNAME }}/Rxt-Tournaments.git origin deployment
+        shell: bash
